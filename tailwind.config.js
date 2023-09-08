@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Fuzzy Bubbles']
+        body: ['Fuzzy Bubbles'],
+        header: ['Joti One']
       },
     },
   },
