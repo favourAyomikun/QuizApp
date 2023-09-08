@@ -7,10 +7,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Itim']
+        body: ['Fuzzy Bubbles']
       },
     },
   },
   plugins: [],
 }
-

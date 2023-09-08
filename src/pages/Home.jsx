@@ -3,7 +3,7 @@ import React from 'react'
 const Home = () => {
   return (
     <main>
-      <div className=''>F.A's Quiz</div>
+      <div className='text-2xl'>F.A's Quiz</div>
     </main>
   )
 }
