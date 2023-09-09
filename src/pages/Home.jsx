@@ -19,9 +19,10 @@ const Home = () => {
           placeholder="input your name"
           className="w-[30%] mt-10 outline-none border border-[#8A817C] bg-[#F4F3EE] rounded-md px-4 uppercase"
         />
-        <Link className="bg-[#F4F3EE] mt-12 h-8 w-[10%] flex justify-center items-center shadow-xl rounded font-semibold">
+        <Link to={'/quizPage'} className="bg-[#F4F3EE] mt-12 h-8 w-[10%] flex justify-center items-center shadow-xl rounded font-semibold">
           <p>Start Quiz</p>
         </Link>
+        <Link to={'/quiz'}>Go to</Link>
       </div>
     </main>
   );
