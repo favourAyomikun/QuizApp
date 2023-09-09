@@ -1,8 +1,8 @@
 import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import Home from '../pages/Home';
-import QuizPage from '../pages/QuizPage';
 import Error from '../pages/Error';
+import QuizPage from '../pages/QuizPage';
 
 const route = createBrowserRouter([
     {
@@ -13,7 +13,7 @@ const route = createBrowserRouter([
                 element: <Home />
             },
             {
-                index: 'quiz',
+                path: 'quizpage',
                 element: <QuizPage />
             }
         ]

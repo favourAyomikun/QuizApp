@@ -6,7 +6,7 @@ const QUIZ_IMAGE =
 
 const Home = () => {
   return (
-    <main className="bg-[#E0AFA0] w-full h-screen">
+    <main>
       <div className="pt-20 flex flex-col justify-center items-center">
         <h2 className="text-6xl font-header">F.A's Quiz</h2>
         <img
@@ -19,10 +19,9 @@ const Home = () => {
           placeholder="input your name"
           className="w-[30%] mt-10 outline-none border border-[#8A817C] bg-[#F4F3EE] rounded-md px-4 uppercase"
         />
-        <Link to={'/quizPage'} className="bg-[#F4F3EE] mt-12 h-8 w-[10%] flex justify-center items-center shadow-xl rounded font-semibold">
+        <Link to={'/quizpage'} className="bg-[#F4F3EE] mt-12 h-8 w-[10%] flex justify-center items-center shadow-xl rounded font-semibold">
           <p>Start Quiz</p>
         </Link>
-        <Link to={'/quiz'}>Go to</Link>
       </div>
     </main>
   );
