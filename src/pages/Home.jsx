@@ -19,9 +19,9 @@ const Home = () => {
           placeholder="input your name"
           className="w-[30%] mt-10 outline-none border border-[#8A817C] bg-[#F4F3EE] rounded-md px-4 uppercase"
         />
-        <p className="bg-[#F4F3EE] mt-12 h-8 w-[10%] flex justify-center items-center shadow-xl rounded font-semibold">
-          <Link>Start Quiz</Link>
-        </p>
+        <Link className="bg-[#F4F3EE] mt-12 h-8 w-[10%] flex justify-center items-center shadow-xl rounded font-semibold">
+          <p>Start Quiz</p>
+        </Link>
       </div>
     </main>
   );
