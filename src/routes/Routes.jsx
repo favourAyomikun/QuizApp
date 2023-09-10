@@ -13,7 +13,7 @@ const route = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: 'quizpage',
+                path: 'quizPage',
                 element: <QuizPage />
             }
         ]

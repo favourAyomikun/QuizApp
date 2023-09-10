@@ -1,10 +1,32 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const QUIZ_IMAGE =
   "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/88/ebc021015445b3be6555240ed48aa8/CTT_course-image_Coursera.png?auto=format%2Ccompress&dpr=1";
 
 const Home = () => {
+  const [inputValue, setInputValue] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const validateInput = () => {
+    if (inputValue === "") {
+      setError("Please Fill in the input field");
+
+      setTimeout(() => {
+        setError(false);
+      }, 2500);
+      return false;
+    }
+    return true;
+  };
+
+  const handleValidateInput = () => {
+    if (validateInput()) {
+      navigate("/quizPage");
+    }
+  };
+
   return (
     <main>
       <div className="pt-20 flex flex-col justify-center items-center">
@@ -18,9 +40,15 @@ const Home = () => {
           type="text"
           placeholder="input your name"
           className="w-[30%] mt-10 outline-none border border-[#8A817C] bg-[#F4F3EE] rounded-md px-4 uppercase"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
         />
-        <Link to={'/quizpage'} className="bg-[#F4F3EE] mt-12 h-8 w-[10%] flex justify-center items-center shadow-xl rounded font-semibold">
-          <p>Start Quiz</p>
+        <small className="text-sm font-extrabold">{error && error}</small>
+        <Link
+          onClick={handleValidateInput}
+          className="bg-[#F4F3EE] mt-8 h-8 w-[10%] flex justify-center items-center shadow-md shadow-[#8A817C] rounded font-semibold"
+        >
+          <button>Start Quiz</button>
         </Link>
       </div>
     </main>
