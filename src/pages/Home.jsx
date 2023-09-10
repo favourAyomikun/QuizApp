@@ -1,14 +1,21 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useInputValue } from "../context/InputValueContext";
 
 const QUIZ_IMAGE =
   "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/88/ebc021015445b3be6555240ed48aa8/CTT_course-image_Coursera.png?auto=format%2Ccompress&dpr=1";
 
 const Home = () => {
-  const [inputValue, setInputValue] = useState("");
+  const { inputValue, setInputValue } = useInputValue();
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+
+    console.log(e.target.value);
+  };
 
   const validateInput = () => {
     if (inputValue === "") {
@@ -28,11 +35,6 @@ const Home = () => {
     }
   };
 
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value)
-    console.log(e.target.value);
-  }
-
   return (
     <main>
       <div className="pt-20 flex flex-col justify-center items-center">
@@ -45,10 +47,9 @@ const Home = () => {
         <input
           type="text"
           placeholder="input your name"
-          className="w-[30%] mt-10 outline-none border border-[#8A817C] bg-[#F4F3EE] rounded-md px-4 uppercase"
+          className="w-[30%] mt-10 outline-none border border-[#8A817C] bg-[#F4F3EE] rounded-md px-4"
           value={inputValue}
           onChange={handleInputChange}
-          inputval= {inputValue}
         />
         <small className="text-[15px] font-extrabold">{error && error}</small>
         <Link

@@ -1,13 +1,15 @@
-import React from 'react'
+import React from "react";
+import { useInputValue } from "../context/InputValueContext";
 
-const QuizPage = (props) => {
-  const test = props.inputval
-  console.log(test);
+const QuizPage = () => {
+  const { inputValue } = useInputValue();
+  console.log(inputValue);
   return (
-    <section className=''>
-      {/* <h1>Welcome {test}</h1> */}
+    <section className="">
+      <h2>Quizpage</h2>
+     <div className="uppercase"> Welcome {inputValue}</div>
     </section>
-  )
-}
+  );
+};
 
 export default QuizPage;
