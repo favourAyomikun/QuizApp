@@ -1,9 +1,11 @@
 import React from 'react'
 
-const QuizPage = () => {
+const QuizPage = (props) => {
+  const test = props.inputval
+  console.log(test);
   return (
     <section className=''>
-      <p>Quizpage</p>
+      {/* <h1>Welcome {test}</h1> */}
     </section>
   )
 }

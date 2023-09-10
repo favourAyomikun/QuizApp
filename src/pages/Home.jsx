@@ -7,6 +7,7 @@ const QUIZ_IMAGE =
 const Home = () => {
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState("");
+
   const navigate = useNavigate();
 
   const validateInput = () => {
@@ -27,6 +28,11 @@ const Home = () => {
     }
   };
 
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value)
+    console.log(e.target.value);
+  }
+
   return (
     <main>
       <div className="pt-20 flex flex-col justify-center items-center">
@@ -41,7 +47,8 @@ const Home = () => {
           placeholder="input your name"
           className="w-[30%] mt-10 outline-none border border-[#8A817C] bg-[#F4F3EE] rounded-md px-4 uppercase"
           value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
+          onChange={handleInputChange}
+          inputval= {inputValue}
         />
         <small className="text-[15px] font-extrabold">{error && error}</small>
         <Link
