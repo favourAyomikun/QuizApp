@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useInputValue } from "../context/InputValueContext";
 
@@ -12,9 +12,10 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
-    setInputValue(e.target.value);
+    const newValue = e.target.value
+    setInputValue(newValue)
 
-    console.log(e.target.value);
+    localStorage.setItem('inputValue', newValue)
   };
 
   const validateInput = () => {
