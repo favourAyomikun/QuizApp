@@ -43,10 +43,10 @@ const Home = () => {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
-        <small className="text-sm font-extrabold">{error && error}</small>
+        <small className="text-[15px] font-extrabold">{error && error}</small>
         <Link
           onClick={handleValidateInput}
-          className="bg-[#F4F3EE] mt-8 h-8 w-[10%] flex justify-center items-center shadow-md shadow-[#8A817C] rounded font-semibold"
+          className="bg-[#F4F3EE] mt-10 h-8 w-[10%] flex justify-center items-center shadow-md shadow-[#8A817C] rounded font-semibold"
         >
           <button>Start Quiz</button>
         </Link>
