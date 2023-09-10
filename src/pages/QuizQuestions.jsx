@@ -3,16 +3,17 @@ import { quizData } from '../data/data'
 
 const QuizQuestions = () => {
     const [data, setData] = useState(quizData)
+    const [currentQuestion, setCurrentQestion] = useState(0)
+    const [userAnswer, setUserAnswer] = useState(null)
+    const [score, setScore] = useState(0)
+
     console.log(quizData);
+
+    
 
   return (
     <main className='container'>
-        {data.map((params, index) => (
-            <div key={index}>
-                <p>{params.question}</p>
-                <p>{params.options}</p>
-            </div>
-        ))}
+
     </main>
   )
 }
