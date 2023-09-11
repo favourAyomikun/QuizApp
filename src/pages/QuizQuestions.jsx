@@ -5,9 +5,18 @@ const QuizQuestions = () => {
     const [data, setData] = useState(quizData)
     const [currentQuestion, setCurrentQestion] = useState(0)
     const [userAnswer, setUserAnswer] = useState(null)
-    const [score, setScore] = useState(0)
+    const [score, userScore] = useState(0)
+    // const [score, setScore] = useState({
+    //     score: 0,
+    //     correctAnswers: 0,
+    //     wrongAnswers: 0
+    // })
 
-    console.log(quizData);
+    // console.log(quizData);
+
+    // const question = setData[currentQuestion]
+    const question = data[currentQuestion]
+    console.log(question);
 
     
 
