@@ -24,21 +24,22 @@ const QuizQuestions = () => {
     setUserAnswer(chosenOption)
 
     if(chosenOption === presentQuestion.correctAnswer) {
-      setUserScore(userScore + 5)
-      console.log(userScore);
+      setUserScore(userScore + 10)
     }
+    console.log(userScore);
   }
 
   const handleNextQuestion = () => {
     if(currentQuestionIndex < data.length) {
       setCurrentQestionIndex(currentQuestionIndex + 1)
 
+      setUserAnswer(null)
     } 
   }
 
   return (
-    <main className="container mx-auto bg-[#F4F3EE] rounded max-w-[50%] mt-10 pb-5 shadow-md shadow-[#8A817C]">
-      <div>
+    <main className="container mx-auto bg-[#F4F3EE] rounded max-w-[50%] mt-10  shadow-md shadow-[#8A817C]">
+      {currentQuestionIndex < data.length ? <div className="pb-5">
         <p className=" ml-2 pt-2">Question {currentQuestionIndex + 1}:</p>
         <h2 className="text-center font-bold text-lg mt-3 mb-5">
           {presentQuestion.question}
@@ -49,7 +50,6 @@ const QuizQuestions = () => {
               key={index}
               className="mb-7 w-[70%] rounded-sm bg-[#BCB8B1] text-base font-semibold outline-none"
               onClick={() => handleAnswerClick(option)}
-              
             >
               {option}
             </button>
@@ -58,7 +58,7 @@ const QuizQuestions = () => {
         <button onClick={handleNextQuestion} className="bg-[#BCB8B1] outline-none shadow rounded-sm px-7 py-[2px] flex items-center mx-auto mt-5">
           <p className="font-semibold">Next</p>
         </button>
-      </div>
+      </div> : (<h2 className="text-center py-4">Thank you for completing the questions, this is your score: <p className="font-extrabold">{userScore}%</p></h2>)}
     </main>
   );
 };

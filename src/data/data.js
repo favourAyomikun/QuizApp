@@ -9,7 +9,7 @@ export const quizData = [
         id: 2,
         question: 'Who is the current president of Nigeria?',
         options: ['Muhammad Buhari', 'Goodluck Johnathan', 'Peter Obi', 'Bola Tinubu'],
-        correctAnswer: 'Tinubu'
+        correctAnswer: 'Bola Tinubu'
     },
     {
         id: 3,
@@ -21,7 +21,7 @@ export const quizData = [
         id: 4,
         question: 'Who is the best striker in the world currently?',
         options: ['Erling Haaland', 'Victor Osimhen', 'Lautaro Martinez', 'Harry Kane'],
-        correctAnswer: 'Man City'
+        correctAnswer: 'Erling Haaland'
     },
     {
         id: 5,
@@ -51,7 +51,7 @@ export const quizData = [
         id: 9,
         question: 'What is the capital of New Zealand?',
         options: ['Washington Dc', 'Illinios', 'Wellington', 'Abuja'],
-        correctAnswer: 'Blue & White'
+        correctAnswer: 'Wellington'
     },
     {
         id: 10,
