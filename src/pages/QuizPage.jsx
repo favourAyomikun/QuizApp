@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useInputValue } from "../context/InputValueContext";
-import QuizQuestions from "./QuizQuestions";
+import QuizQuestions from "./QuizTemplate";
 
 const QuizPage = () => {
   const { inputValue, setInputValue } = useInputValue();

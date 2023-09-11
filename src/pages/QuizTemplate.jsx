@@ -22,7 +22,7 @@ const QuizQuestions = () => {
     <main className="container mx-auto bg-[#F4F3EE] rounded max-w-[50%] mt-10 pb-5 shadow-md shadow-[#8A817C]">
       <div>
         <p className=" ml-2 pt-2">Question {currentQuestionIndex + 1}:</p>
-        <h2 className="text-center font-bold text-[19px] mt-3 mb-4">
+        <h2 className="text-center font-bold text-[19px] mt-3 mb-5">
           {presentQuestion.question}
         </h2>
         <div className="flex flex-col items-center">
