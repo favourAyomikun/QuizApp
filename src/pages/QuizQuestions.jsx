@@ -18,11 +18,11 @@ const QuizQuestions = () => {
     const question = data[currentQuestion]
     console.log(question);
 
-    
+
 
   return (
     <main className='container'>
-
+        
     </main>
   )
 }

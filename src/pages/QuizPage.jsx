@@ -16,6 +16,7 @@ const QuizPage = () => {
   return (
     <section>
       <h2 className="uppercase pt-10 ml-10 font-bold text-2xl"> Welcome {inputValue}</h2>
+      <h3 className="text-center font-bold text-lg mt-5 tracking-wider">Answer the following questions:</h3>
       <QuizQuestions />
     </section>
   );
