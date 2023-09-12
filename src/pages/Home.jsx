@@ -52,7 +52,7 @@ const Home = () => {
           value={inputValue}
           onChange={handleInputChange}
         />
-        <small className="text-[11px] md:text-[13px] lg:text-[15px] font-extrabold">{error && error}</small>
+        <small className="text-[11px] pt-1 text-red-300 md:text-[13px] lg:text-[15px] font-extrabold">{error && error}</small>
         <Link
           onClick={handleValidateInput}
           className="bg-white text-black text-sm md:text-base mt-10 h-8 w-[21%] md:w-[15%] lg:w-[10%] flex justify-center items-center shadow-md shadow-gray-800 rounded font-semibold"

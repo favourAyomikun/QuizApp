@@ -49,7 +49,7 @@ const QuizQuestions = () => {
             {presentQuestion.options.map((option, index) => (
               <button
                 key={index}
-                className="mb-7 w-[70%] rounded-sm bg-[#022b3ac4] text-white text-base font-semibold outline-none hover:bg-[#E0AFA0]"
+                className="mb-7 w-[70%] rounded-sm bg-[#1F7A8C] text-white text-base font-semibold outline-none hover:bg-[#022b3ac4]"
                 onClick={() => handleAnswerClick(option)}
               >
                 {option}
@@ -60,14 +60,14 @@ const QuizQuestions = () => {
             {showPrevButton && (
               <button
                 onClick={handlePreviousQuestion}
-                className="bg-[#BCB8B1] outline-none shadow rounded-sm px-7 py-[2px] mt-5 mr-2 hover:bg-[#E0AFA0]"
+                className="bg-white shadow-gray-800  outline-none shadow rounded-sm px-7 py-[2px] mt-5 mr-2 hover:bg-[#022b3ac4] hover:text-white hover:shadow-transparent"
               >
                 <p className="font-semibold">Back</p>
               </button>
             )}
             <button
               onClick={handleNextQuestion}
-              className="bg-[#BCB8B1] outline-none shadow rounded-sm px-7 py-[2px] mt-5 hover:bg-[#E0AFA0]"
+              className="bg-white shadow-gray-800 outline-none shadow rounded-sm px-7 py-[2px] mt-5 hover:bg-[#022b3ac4] hover:text-white hover:shadow-transparent"
             >
               <p className="font-semibold">Next</p>
             </button>

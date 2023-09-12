@@ -21,7 +21,7 @@ const QuizPage = () => {
     <section>
       <div className="flex items-center justify-between pt-10 px-10">
         <h2 className="uppercase font-bold text-2xl text-white">Welcome {inputValue}</h2>
-        <button onClick={handleReset} className="bg-white shadow-md shadow-gray-800 px-3 py-[2px] rounded">
+        <button onClick={handleReset} className="bg-white shadow-md shadow-gray-800 hover:bg-[#022b3ac4] hover:text-white hover:shadow-transparent px-3 py-[2px] rounded">
           RESET
         </button>
       </div>
