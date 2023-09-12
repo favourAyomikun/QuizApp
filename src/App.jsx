@@ -4,7 +4,7 @@ import { InputValueProvider } from "./context/InputValueContext";
 
 function App() {
   return (
-    <div className="font-body bg-[#F4F3EE] w-full h-screen text-[#463F3A]">
+    <div className="font-body bg-[#1F7A8C] w-full h-screen text-black">
       <InputValueProvider>
         <RouterProvider router={route} />
       </InputValueProvider>

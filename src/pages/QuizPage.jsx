@@ -20,12 +20,12 @@ const QuizPage = () => {
   return (
     <section>
       <div className="flex items-center justify-between pt-10 px-10">
-        <h2 className="uppercase font-bold text-2xl">Welcome {inputValue}</h2>
-        <button onClick={handleReset} className="bg-[#F4F3EE] px-3 py-[2px] rounded">
+        <h2 className="uppercase font-bold text-2xl text-white">Welcome {inputValue}</h2>
+        <button onClick={handleReset} className="bg-white shadow-md shadow-gray-800 px-3 py-[2px] rounded">
           RESET
         </button>
       </div>
-      <h3 className="text-center font-bold text-lg mt-5 tracking-wider">
+      <h3 className="text-center font-bold text-lg mt-5 text-white tracking-wider">
         Answer the following questions:
       </h3>
       <QuizQuestions />

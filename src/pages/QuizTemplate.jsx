@@ -38,7 +38,7 @@ const QuizQuestions = () => {
   };
 
   return (
-    <main className="container mx-auto bg-[#F4F3EE] rounded max-w-[50%] mt-10  shadow-md shadow-[#8A817C]">
+    <main className="container mx-auto rounded max-w-[50%] mt-10 bg-white shadow-md shadow-gray-700">
       {currentQuestionIndex < data.length ? (
         <div className="pb-5">
           <p className=" ml-2 pt-2">Question {currentQuestionIndex + 1}:</p>
@@ -49,7 +49,7 @@ const QuizQuestions = () => {
             {presentQuestion.options.map((option, index) => (
               <button
                 key={index}
-                className="mb-7 w-[70%] rounded-sm bg-[#BCB8B1] text-base font-semibold outline-none hover:bg-[#E0AFA0]"
+                className="mb-7 w-[70%] rounded-sm bg-[#022b3ac4] text-white text-base font-semibold outline-none hover:bg-[#E0AFA0]"
                 onClick={() => handleAnswerClick(option)}
               >
                 {option}

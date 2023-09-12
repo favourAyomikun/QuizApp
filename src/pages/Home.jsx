@@ -39,7 +39,7 @@ const Home = () => {
   return (
     <main>
       <div className="pt-20 flex flex-col justify-center items-center">
-        <h2 className="text-3xl md:text-5xl lg:text-6xl font-header">F.A's Quiz</h2>
+        <h2 className="text-white text-3xl md:text-5xl lg:text-6xl font-header">F.A's Quiz</h2>
         <img
           src={QUIZ_IMAGE}
           alt="quiz-image"
@@ -48,14 +48,14 @@ const Home = () => {
         <input
           type="text"
           placeholder="input your name"
-          className="w-[50%] md:w-[40%] lg:w-[30%] mt-10 outline-none border border-[#8A817C] bg-[#F4F3EE] rounded-md px-4"
+          className="w-[50%] md:w-[40%] lg:w-[30%] mt-10 outline-none border border-black bg-white rounded-md px-4"
           value={inputValue}
           onChange={handleInputChange}
         />
         <small className="text-[11px] md:text-[13px] lg:text-[15px] font-extrabold">{error && error}</small>
         <Link
           onClick={handleValidateInput}
-          className="bg-[#f5a690e0] text-sm md:text-base mt-10 h-8 w-[21%] md:w-[15%] lg:w-[10%] flex justify-center items-center shadow-md shadow-[#8A817C] rounded font-semibold"
+          className="bg-white text-black text-sm md:text-base mt-10 h-8 w-[21%] md:w-[15%] lg:w-[10%] flex justify-center items-center shadow-md shadow-gray-800 rounded font-semibold"
         >
           <button>Start Quiz</button>
         </Link>
