@@ -7,19 +7,8 @@ const QuizQuestions = () => {
   const [userAnswer, setUserAnswer] = useState(null);
   const [userScore, setUserScore] = useState(0);
   const [showPrevButton, setShowPrevButton] = useState(false);
-  // const [score, setScore] = useState({
-  //     score: 0,
-  //     correctAnswers: 0,
-  //     wrongAnswers: 0
-  // })
 
-  // console.log(quizData);
-
-  // const question = setData[currentQuestionIndex]
   const presentQuestion = data[currentQuestionIndex];
-  // console.log(presentQuestion);
-
-  // console.log(currentQuestionIndex <= data.length)
 
   const handleAnswerClick = (chosenOption) => {
     setUserAnswer(chosenOption);
