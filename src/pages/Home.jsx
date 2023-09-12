@@ -55,7 +55,7 @@ const Home = () => {
         <small className="text-[11px] md:text-[13px] lg:text-[15px] font-extrabold">{error && error}</small>
         <Link
           onClick={handleValidateInput}
-          className="bg-[#F4F3EE] text-sm md:text-base mt-10 h-8 w-[21%] md:w-[15%] lg:w-[10%] flex justify-center items-center shadow-md shadow-[#8A817C] rounded font-semibold"
+          className="bg-[#f5a690e0] text-sm md:text-base mt-10 h-8 w-[21%] md:w-[15%] lg:w-[10%] flex justify-center items-center shadow-md shadow-[#8A817C] rounded font-semibold"
         >
           <button>Start Quiz</button>
         </Link>
