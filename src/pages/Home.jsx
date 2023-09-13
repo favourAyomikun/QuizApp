@@ -32,7 +32,7 @@ const Home = () => {
 
   const handleValidateInput = () => {
     if (validateInput()) {
-      navigate("/countdownPage");
+      navigate("/instructionPage");
     }
   };
 
