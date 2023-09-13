@@ -25,7 +25,7 @@ const Home = () => {
       setTimeout(() => {
         setError(false);
       }, 2500);
-      return false;
+      return false; 
     }
     return true;
   };
