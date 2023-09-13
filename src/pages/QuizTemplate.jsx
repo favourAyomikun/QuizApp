@@ -4,10 +4,11 @@ import { quizData } from "../data/data";
 const QuizQuestions = () => {
   const [data, setData] = useState(quizData);
   const [currentQuestionIndex, setCurrentQestionIndex] = useState(0);
-  const [userAnswer, setUserAnswer] = useState(null);
+  const [userAnswer, setUserAnswer] = useState();
   const [userScore, setUserScore] = useState(0);
   const [showPrevButton, setShowPrevButton] = useState(false);
   const [lastQuestion, setlastQuestion] = useState(true);
+  const [buttonState, setButtonState] = useState(false);
 
   const presentQuestion = data[currentQuestionIndex];
 
@@ -16,7 +17,7 @@ const QuizQuestions = () => {
     data[currentQuestionIndex].chosenAnswer = chosenOption
 
    
-
+    setButtonState(!buttonState);
 
     
   };
@@ -77,7 +78,7 @@ const QuizQuestions = () => {
             {presentQuestion.options.map((option, index) => (
               <button
                 key={index}
-                className={` mb-7 w-[70%] rounded-sm text-white text-[15px] md:text-base font-semibold outline-none hover:bg-[#022b3ac4] ${option === userAnswer ? 'bg-[#022b3ac4]' : 'bg-[#1F7A8C]'}`}
+                className={` mb-7 w-[70%] rounded-sm text-white text-[15px] md:text-base font-semibold outline-none hover:bg-[#022b3ac4] ${option === userAnswer || option === data[currentQuestionIndex].chosenAnswer ? 'bg-[#022b3ac4]' : 'bg-[#1F7A8C]'}`}
                 onClick={() => handleAnswerClick(option)}
               >
                 {option}
