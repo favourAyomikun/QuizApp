@@ -19,8 +19,8 @@ export const quizData = [
     },
     {
         id: 4,
-        question: 'Who a?',
-        options: ['Erling Haaland', 'Victor Osimhen', 'Lautaro Martinez', 'Harry Kane'],
+        question: 'Which country has the most world cup trophies?',
+        options: ['England', 'France', 'Brazil', 'Argentina'],
         correctAnswer: 'Erling Haaland'
     },
     {
