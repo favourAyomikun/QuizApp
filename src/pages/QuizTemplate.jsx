@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { quizData } from "../data/data";
 
 const QuizQuestions = () => {
@@ -11,17 +11,11 @@ const QuizQuestions = () => {
 
   const presentQuestion = data[currentQuestionIndex];
 
-  const handleAnswerClick = (chosenOption, index) => {
-    setUserAnswer(chosenOption);
+  const handleAnswerClick = (chosenOption) => {
 
-    // data[index].chosenAnswer = chosenOption
+    data[currentQuestionIndex].chosenAnswer = chosenOption
 
-   console.log(index)
-   console.log(data)
-
-    if (chosenOption === presentQuestion.correctAnswer) {
-      setUserScore(userScore + 10);
-    }
+   
 
 
     
@@ -56,16 +50,19 @@ const QuizQuestions = () => {
    
   };
   const handleSubmit = () => {
-    
-    data.forEach(data => {
-      console.log(data.chosenAnswer, data.correctAnswer)
-      if (data.chosenAnswer === data.correctAnswer) {
-        setUserScore(userScore + 10);
+    data.forEach((dataItem) => {
+      if (dataItem.chosenAnswer === dataItem.correctAnswer) {
+        setUserScore((prevUserScore) => {
+          return prevUserScore + 10;
+        });
+        console.log('yes');
       }
-    })
-    console.log(userScore)
+    });
+  };
 
-  }
+  useEffect(() => {
+    console.log(userScore);
+  }, [userScore]);
 
   return (
     <main className="container mx-auto rounded max-w-[80%] md:max-w-[50%] mt-16 bg-white shadow-md shadow-gray-700">
@@ -80,7 +77,7 @@ const QuizQuestions = () => {
               <button
                 key={index}
                 className={` mb-7 w-[70%] rounded-sm text-white text-[15px] md:text-base font-semibold outline-none hover:bg-[#022b3ac4] ${option === userAnswer ? 'bg-[#022b3ac4]' : 'bg-[#1F7A8C]'}`}
-                onClick={() => handleAnswerClick(option, option.id)}
+                onClick={() => handleAnswerClick(option)}
               >
                 {option}
               </button>
