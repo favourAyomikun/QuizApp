@@ -37,18 +37,18 @@ const QuizQuestions = () => {
   };
 
   return (
-    <main className="container mx-auto rounded max-w-[50%] mt-16 bg-white shadow-md shadow-gray-700">
+    <main className="container mx-auto rounded max-w-[80%] md:max-w-[50%] mt-16 bg-white shadow-md shadow-gray-700">
       {currentQuestionIndex < data.length ? (
         <div className="pb-5">
-          <p className=" ml-2 pt-2">Question {currentQuestionIndex + 1}:</p>
-          <h2 className="text-center font-bold text-lg mt-3 mb-5">
+          <p className="text-sm md:text-base ml-2 pt-2">Question {currentQuestionIndex + 1}:</p>
+          <h2 className="text-center font-bold md:text-lg mt-3 mb-5 px-2">
             {presentQuestion.question}
           </h2>
           <div className="flex flex-col items-center">
             {presentQuestion.options.map((option, index) => (
               <button
                 key={index}
-                className={` mb-7 w-[70%] rounded-sm text-white text-base font-semibold outline-none hover:bg-[#022b3ac4] ${option === userAnswer ? 'bg-[#022b3ac4]' : 'bg-[#1F7A8C]'}`}
+                className={` mb-7 w-[70%] rounded-sm text-white text-[15px] md:text-base font-semibold outline-none hover:bg-[#022b3ac4] ${option === userAnswer ? 'bg-[#022b3ac4]' : 'bg-[#1F7A8C]'}`}
                 onClick={() => handleAnswerClick(option)}
               >
                 {option}
@@ -61,14 +61,14 @@ const QuizQuestions = () => {
                 onClick={handlePreviousQuestion}
                 className="bg-white shadow-gray-800  outline-none shadow rounded-sm px-7 py-[2px] mt-5 mr-2 hover:bg-[#022b3ac4] hover:text-white hover:shadow-transparent"
               >
-                <p className="font-semibold">Back</p>
+                <p className="font-semibold text-sm md:text-base">Back</p>
               </button>
             )}
             <button
               onClick={handleNextQuestion}
               className="bg-white shadow-gray-800 outline-none shadow rounded-sm px-7 py-[2px] mt-5 hover:bg-[#022b3ac4] hover:text-white hover:shadow-transparent"
             >
-              <p className="font-semibold">Next</p>
+              <p className="font-semibold text-sm md:text-base">Next</p>
             </button>
           </div>
         </div>
