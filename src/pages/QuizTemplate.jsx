@@ -56,14 +56,12 @@ const QuizQuestions = () => {
         setUserScore((prevUserScore) => {
           return prevUserScore + 10;
         });
-        console.log('yes');
       }
     });
     setCurrentQestionIndex(20)
   };
 
   useEffect(() => {
-    console.log(userScore);
   }, [userScore]);
 
   return (
