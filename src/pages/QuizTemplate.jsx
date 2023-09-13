@@ -16,7 +16,6 @@ const QuizQuestions = () => {
     if (chosenOption === presentQuestion.correctAnswer) {
       setUserScore(userScore + 10);
     }
-    console.log(userScore);
   };
 
   const handleNextQuestion = () => {
@@ -38,7 +37,7 @@ const QuizQuestions = () => {
   };
 
   return (
-    <main className="container mx-auto rounded max-w-[50%] mt-10 bg-white shadow-md shadow-gray-700">
+    <main className="container mx-auto rounded max-w-[50%] mt-16 bg-white shadow-md shadow-gray-700">
       {currentQuestionIndex < data.length ? (
         <div className="pb-5">
           <p className=" ml-2 pt-2">Question {currentQuestionIndex + 1}:</p>

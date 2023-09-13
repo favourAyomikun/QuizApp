@@ -25,9 +25,6 @@ const QuizPage = () => {
           RESET
         </button>
       </div>
-      {/* <h3 className="text-center font-bold text-lg mt-5 text-white tracking-wider">
-        Answer the following questions:
-      </h3> */}
       <QuizQuestions />
     </section>
   );

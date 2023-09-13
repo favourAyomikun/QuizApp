@@ -13,7 +13,7 @@ const Countdown = () => {
                 clearInterval(countdown)
                 navigate('/quizPage')
             }
-        }, 200);
+        }, 1000);
     
         return () => {
             clearInterval(countdown)
@@ -29,7 +29,7 @@ const Countdown = () => {
         <p>2. Choose only one answer for the questions.</p>
         <p>3. The quiz has no time limit, Take your time.</p>
         <p>4. Score would be displayed once done with the questions.</p></div>
-        <p className='text-xl mt-4'>{isCounting}</p>
+        <p className='text-xl mt-5'>{isCounting}</p>
     </div>
   )
 }
