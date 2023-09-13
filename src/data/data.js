@@ -19,7 +19,7 @@ export const quizData = [
     },
     {
         id: 4,
-        question: 'Who is the best striker in the world currently?',
+        question: 'Who a?',
         options: ['Erling Haaland', 'Victor Osimhen', 'Lautaro Martinez', 'Harry Kane'],
         correctAnswer: 'Erling Haaland'
     },
@@ -50,7 +50,7 @@ export const quizData = [
     {
         id: 9,
         question: 'What is the capital of New Zealand?',
-        options: ['Washington Dc', 'Illinios', 'Wellington', 'Abuja'],
+        options: ['Washington Dc', 'Illinios', 'Wellington', 'Chicago'],
         correctAnswer: 'Wellington'
     },
     {
