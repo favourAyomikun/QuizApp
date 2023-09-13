@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Countdown = () => {
     const [isCounting, setIsCounting] = useState(30)
-    // const [showCountdown, setShowCountdown] = useState('')
+    const navigate = useNavigate()
     
     useEffect(() => {
         const countdown = setInterval(() => {
@@ -10,9 +11,16 @@ const Countdown = () => {
                 setIsCounting(isCounting - 1)
             } else {
                 clearInterval(countdown)
+                navigate('/quizPage')
             }
-        }, 1000)
-    }, [])
+        }, 200);
+    
+        return () => {
+            clearInterval(countdown)
+        }
+    }, [isCounting])
+
+  
 
   return (
     <div className='text-white text-center pt-40 tracking-wide leading-10'>
@@ -21,7 +29,7 @@ const Countdown = () => {
         <p>2. Choose only one answer for the questions.</p>
         <p>3. The quiz has no time limit, Take your time.</p>
         <p>4. Score would be displayed once done with the questions.</p></div>
-        {/* <p>{showCountdown}</p> */}
+        <p className='text-xl mt-4'>{isCounting}</p>
     </div>
   )
 }
