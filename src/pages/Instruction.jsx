@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Countdown = () => {
+const Instruction = () => {
   return (
     <div className="text-white flex flex-col justify-center items-center h-screen text-center">
       <div className="tracking-normal md:tracking-wide leading-10">
@@ -23,4 +23,4 @@ const Countdown = () => {
   );
 };
 
-export default Countdown;
+export default Instruction;
