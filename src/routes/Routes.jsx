@@ -15,7 +15,7 @@ const route = createBrowserRouter([
     element: <Instruction />
   },
   {
-    path: 'quizPage',
+    path: '/quizPage',
     element: <QuizPage />
   },
   {
