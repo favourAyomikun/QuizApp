@@ -7,15 +7,24 @@ const QuizQuestions = () => {
   const [userAnswer, setUserAnswer] = useState(null);
   const [userScore, setUserScore] = useState(0);
   const [showPrevButton, setShowPrevButton] = useState(false);
+  const [lastQuestion, setlastQuestion] = useState(true);
 
   const presentQuestion = data[currentQuestionIndex];
 
-  const handleAnswerClick = (chosenOption) => {
+  const handleAnswerClick = (chosenOption, index) => {
     setUserAnswer(chosenOption);
+
+    // data[index].chosenAnswer = chosenOption
+
+   console.log(index)
+   console.log(data)
 
     if (chosenOption === presentQuestion.correctAnswer) {
       setUserScore(userScore + 10);
     }
+
+
+    
   };
 
   const handleNextQuestion = () => {
@@ -25,16 +34,38 @@ const QuizQuestions = () => {
       setUserAnswer(null);
       setShowPrevButton(true);
     }
+    if (currentQuestionIndex === 8) {
+      setlastQuestion(false)
+    } else {
+      setlastQuestion(true)
+    }
   };
 
   const handlePreviousQuestion = () => {
+    if (currentQuestionIndex === 8) {
+      setlastQuestion(false)
+    } else {
+      setlastQuestion(true)
+    }
     if (currentQuestionIndex > 0) {
       setCurrentQestionIndex(currentQuestionIndex - 1);
       if (currentQuestionIndex === 1) {
         setShowPrevButton(false);
       }
     }
+   
   };
+  const handleSubmit = () => {
+    
+    data.forEach(data => {
+      console.log(data.chosenAnswer, data.correctAnswer)
+      if (data.chosenAnswer === data.correctAnswer) {
+        setUserScore(userScore + 10);
+      }
+    })
+    console.log(userScore)
+
+  }
 
   return (
     <main className="container mx-auto rounded max-w-[80%] md:max-w-[50%] mt-16 bg-white shadow-md shadow-gray-700">
@@ -49,7 +80,7 @@ const QuizQuestions = () => {
               <button
                 key={index}
                 className={` mb-7 w-[70%] rounded-sm text-white text-[15px] md:text-base font-semibold outline-none hover:bg-[#022b3ac4] ${option === userAnswer ? 'bg-[#022b3ac4]' : 'bg-[#1F7A8C]'}`}
-                onClick={() => handleAnswerClick(option)}
+                onClick={() => handleAnswerClick(option, option.id)}
               >
                 {option}
               </button>
@@ -64,12 +95,19 @@ const QuizQuestions = () => {
                 <p className="font-semibold text-sm md:text-base">Back</p>
               </button>
             )}
-            <button
+            {lastQuestion ?<button
               onClick={handleNextQuestion}
               className="bg-white shadow-gray-800 outline-none shadow rounded-sm px-7 py-[2px] mt-5 hover:bg-[#022b3ac4] hover:text-white hover:shadow-transparent"
             >
               <p className="font-semibold text-sm md:text-base">Next</p>
+            </button> :
+              <button
+              onClick={handleSubmit}
+              className="bg-white shadow-gray-800 outline-none shadow rounded-sm px-7 py-[2px] mt-5 hover:bg-[#022b3ac4] hover:text-white hover:shadow-transparent"
+            >
+              <p className="font-semibold text-sm md:text-base">Submit</p>
             </button>
+            }
           </div>
         </div>
       ) : (
