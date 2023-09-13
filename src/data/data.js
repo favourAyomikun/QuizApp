@@ -21,7 +21,7 @@ export const quizData = [
         id: 4,
         question: 'Which country has the most world cup trophies?',
         options: ['England', 'France', 'Brazil', 'Argentina'],
-        correctAnswer: 'Erling Haaland'
+        correctAnswer: 'Brazil'
     },
     {
         id: 5,
