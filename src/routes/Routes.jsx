@@ -17,10 +17,10 @@ const route = createBrowserRouter([
         path: "countdownPage",
         element: <Countdown />
       },
-      {
-        path: "quizPage",
-        element: <QuizPage />,
-      },
+      // {
+      //   path: "quizPage",
+      //   element: <QuizPage />,
+      // },
     ],
   },
   {
