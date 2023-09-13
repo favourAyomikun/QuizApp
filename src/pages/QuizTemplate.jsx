@@ -58,6 +58,7 @@ const QuizQuestions = () => {
         console.log('yes');
       }
     });
+    setCurrentQestionIndex(20)
   };
 
   useEffect(() => {
