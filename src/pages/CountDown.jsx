@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Countdown = () => {
-  const [isCounting, setIsCounting] = useState(30);
+  const [isCounting, setIsCounting] = useState(20);
   const navigate = useNavigate();
 
   useEffect(() => {
