@@ -2,8 +2,10 @@ import React from 'react'
 
 const Countdown = () => {
   return (
-    <div>Countdown</div>
+    <div>
+
+    </div>
   )
 }
 
-export default Countdown
+export default Countdown;

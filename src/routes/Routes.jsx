@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
 import Error from "../pages/Error";
 import QuizPage from "../pages/QuizPage";
+import Countdown from "../pages/Countdown";
 
 const route = createBrowserRouter([
   {
@@ -11,6 +12,10 @@ const route = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "countdownPage",
+        element: <Countdown />
       },
       {
         path: "quizPage",
