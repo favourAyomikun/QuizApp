@@ -49,7 +49,7 @@ const QuizQuestions = () => {
             {presentQuestion.options.map((option, index) => (
               <button
                 key={index}
-                className="mb-7 w-[70%] rounded-sm bg-[#1F7A8C] text-white text-base font-semibold outline-none hover:bg-[#022b3ac4]"
+                className={` mb-7 w-[70%] rounded-sm text-white text-base font-semibold outline-none hover:bg-[#022b3ac4] ${option === userAnswer ? 'bg-[#022b3ac4]' : 'bg-[#1F7A8C]'}`}
                 onClick={() => handleAnswerClick(option)}
               >
                 {option}
