@@ -1,21 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { quizData } from "../data/data";
 
 const QuizQuestions = () => {
   const [data, setData] = useState(quizData);
   const [currentQuestionIndex, setCurrentQestionIndex] = useState(0);
-  const [userAnswer, setUserAnswer] = useState(null);
+  const [userAnswer, setUserAnswer] = useState();
   const [userScore, setUserScore] = useState(0);
   const [showPrevButton, setShowPrevButton] = useState(false);
+  const [lastQuestion, setlastQuestion] = useState(true);
+  const [buttonState, setButtonState] = useState(false);
 
   const presentQuestion = data[currentQuestionIndex];
 
   const handleAnswerClick = (chosenOption) => {
-    setUserAnswer(chosenOption);
 
-    if (chosenOption === presentQuestion.correctAnswer) {
-      setUserScore(userScore + 10);
-    }
+    data[currentQuestionIndex].chosenAnswer = chosenOption
+
+   
+    setButtonState(!buttonState);
+
+    
   };
 
   const handleNextQuestion = () => {
@@ -25,16 +29,40 @@ const QuizQuestions = () => {
       setUserAnswer(null);
       setShowPrevButton(true);
     }
+    if (currentQuestionIndex === 8) {
+      setlastQuestion(false)
+    } else {
+      setlastQuestion(true)
+    }
   };
 
   const handlePreviousQuestion = () => {
+    if (currentQuestionIndex === 8) {
+      setlastQuestion(false)
+    } else {
+      setlastQuestion(true)
+    }
     if (currentQuestionIndex > 0) {
       setCurrentQestionIndex(currentQuestionIndex - 1);
       if (currentQuestionIndex === 1) {
         setShowPrevButton(false);
       }
     }
+   
   };
+  const handleSubmit = () => {
+    data.forEach((dataItem) => {
+      if (dataItem.chosenAnswer === dataItem.correctAnswer) {
+        setUserScore((prevUserScore) => {
+          return prevUserScore + 10;
+        });
+      }
+    });
+    setCurrentQestionIndex(20)
+  };
+
+  useEffect(() => {
+  }, [userScore]);
 
   return (
     <main className="container mx-auto rounded max-w-[80%] md:max-w-[50%] mt-16 bg-white shadow-md shadow-gray-700">
@@ -48,7 +76,7 @@ const QuizQuestions = () => {
             {presentQuestion.options.map((option, index) => (
               <button
                 key={index}
-                className={` mb-7 w-[70%] rounded-sm text-white text-[15px] md:text-base font-semibold outline-none hover:bg-[#022b3ac4] ${option === userAnswer ? 'bg-[#022b3ac4]' : 'bg-[#1F7A8C]'}`}
+                className={` mb-7 w-[70%] rounded-sm text-white text-[15px] md:text-base font-semibold outline-none hover:bg-[#022b3ac4] ${option === userAnswer || option === data[currentQuestionIndex].chosenAnswer ? 'bg-[#022b3ac4]' : 'bg-[#1F7A8C]'}`}
                 onClick={() => handleAnswerClick(option)}
               >
                 {option}
@@ -64,12 +92,19 @@ const QuizQuestions = () => {
                 <p className="font-semibold text-sm md:text-base">Back</p>
               </button>
             )}
-            <button
+            {lastQuestion ?<button
               onClick={handleNextQuestion}
               className="bg-white shadow-gray-800 outline-none shadow rounded-sm px-7 py-[2px] mt-5 hover:bg-[#022b3ac4] hover:text-white hover:shadow-transparent"
             >
               <p className="font-semibold text-sm md:text-base">Next</p>
+            </button> :
+              <button
+              onClick={handleSubmit}
+              className="bg-white shadow-gray-800 outline-none shadow rounded-sm px-7 py-[2px] mt-5 hover:bg-[#022b3ac4] hover:text-white hover:shadow-transparent"
+            >
+              <p className="font-semibold text-sm md:text-base">Submit</p>
             </button>
+            }
           </div>
         </div>
       ) : (
