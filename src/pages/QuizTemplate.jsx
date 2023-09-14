@@ -40,7 +40,9 @@ const QuizQuestions = () => {
     <main className="container mx-auto rounded max-w-[80%] md:max-w-[50%] mt-16 bg-white shadow-md shadow-gray-700">
       {currentQuestionIndex < data.length ? (
         <div className="pb-5">
-          <p className="text-sm md:text-base ml-2 pt-2">Question {currentQuestionIndex + 1}:</p>
+          <p className="text-sm md:text-base ml-2 pt-2">
+            Question {currentQuestionIndex + 1}:
+          </p>
           <h2 className="text-center font-bold md:text-lg mt-3 mb-5 px-2">
             {presentQuestion.question}
           </h2>
@@ -48,13 +50,33 @@ const QuizQuestions = () => {
             {presentQuestion.options.map((option, index) => (
               <button
                 key={index}
-                className={` mb-7 w-[70%] rounded-sm text-white text-[15px] md:text-base font-semibold outline-none hover:bg-[#022b3ac4] ${option === userAnswer ? 'bg-[#022b3ac4]' : 'bg-[#1F7A8C]'}`}
                 onClick={() => handleAnswerClick(option)}
+                className={`${
+                  userAnswer !== null && userAnswer === option
+                    ? option === presentQuestion.correctAnswer
+                      ? "bg-green-400"
+                      : "bg-red-400"
+                    : "bg-[#1F7A8C]"
+                } mb-7 w-[70%] rounded-sm text-white text-[15px] md:text-base font-semibold outline-none hover:bg-[#022b3ac4]`}
               >
                 {option}
               </button>
             ))}
           </div>
+          {userAnswer !== null && (
+            <div className="text-x[13px] md:text-sm font-bold text-green-900 pl-5">
+              {userAnswer === presentQuestion.correctAnswer ? (
+                "The answer is correct!"
+              ) : (
+                <div className="text-red-800">
+                  Incorrect: answer is -{" "}
+                  <span className="text-green-900">
+                    {presentQuestion.correctAnswer}
+                  </span>
+                </div>
+              )}
+            </div>
+          )}
           <div className="flex justify-end mr-2">
             {showPrevButton && (
               <button
