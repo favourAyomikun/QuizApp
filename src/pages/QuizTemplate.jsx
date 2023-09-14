@@ -78,10 +78,6 @@ const QuizQuestions = () => {
             {presentQuestion.options.map((option, index) => (
               <button
                 key={index}
-<<<<<<< HEAD
-=======
-                className={` mb-7 w-[70%] rounded-sm text-white text-[15px] md:text-base font-semibold outline-none hover:bg-[#022b3ac4] ${option === userAnswer || option === data[currentQuestionIndex].chosenAnswer ? 'bg-[#022b3ac4]' : 'bg-[#1F7A8C]'}`}
->>>>>>> origin/main
                 onClick={() => handleAnswerClick(option)}
                 className={`${
                   userAnswer !== null && userAnswer === option
