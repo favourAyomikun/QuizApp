@@ -13,13 +13,9 @@ const QuizQuestions = () => {
   const presentQuestion = data[currentQuestionIndex];
 
   const handleAnswerClick = (chosenOption) => {
+    presentQuestion.chosenAnswer = chosenOption
 
-    data[currentQuestionIndex].chosenAnswer = chosenOption
-
-   
     setButtonState(!buttonState);
-
-    
   };
 
   const handleNextQuestion = () => {
@@ -50,6 +46,7 @@ const QuizQuestions = () => {
     }
    
   };
+
   const handleSubmit = () => {
     data.forEach((dataItem) => {
       if (dataItem.chosenAnswer === dataItem.correctAnswer) {
