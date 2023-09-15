@@ -88,7 +88,7 @@ const QuizQuestions = () => {
             ))}
           </div>
           {userAnswer !== null && (
-            <div className="text-x[13px] md:text-sm font-bold text-green-900 pl-5">
+            <div className="text-xs md:text-sm font-bold text-green-900 pl-5">
               {userAnswer === presentQuestion.correctAnswer ? (
                 <p>The answer is correct!</p>
               ) : (
