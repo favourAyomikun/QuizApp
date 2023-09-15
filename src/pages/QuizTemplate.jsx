@@ -14,8 +14,8 @@ const QuizQuestions = () => {
 
   const handleAnswerClick = (chosenOption) => {
     presentQuestion.chosenAnswer = chosenOption;
-    
-    setUserAnswer(chosenOption)
+
+    setUserAnswer(chosenOption);
     setButtonState(!buttonState);
   };
 
@@ -75,18 +75,11 @@ const QuizQuestions = () => {
               <button
                 key={index}
                 onClick={() => handleAnswerClick(option)}
-                // className={`${
-                //   userAnswer !== null && userAnswer === option
-                //     ? option === presentQuestion.correctAnswer
-                //       ? "bg-green-400"
-                //       : "bg-red-400"
-                //     : "bg-[#1F7A8C]"
-                // } mb-7 w-[70%] rounded-sm text-white text-[15px] md:text-base font-semibold outline-none hover:bg-[#022b3ac4]`}
-
-                className={` mb-7 w-[70%] rounded-sm text-white text-[15px] md:text-base font-semibold outline-none hover:bg-[#022b3ac4] ${
-                  option === userAnswer ||
-                  option === data[currentQuestionIndex].chosenAnswer
-                    ? "bg-[#022b3ac4]"
+                className={`mb-7 w-[70%] rounded-sm text-white text-[15px] md:text-base font-semibold outline-none hover:bg-[#022b3ac4] ${
+                  userAnswer === option
+                    ? option === presentQuestion.correctAnswer
+                      ? "bg-green-400"
+                      : "bg-red-400"
                     : "bg-[#1F7A8C]"
                 }`}
               >
